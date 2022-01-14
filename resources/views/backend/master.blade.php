@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="{{ url('backend') }}/css/style.css">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{ url('backend') }}/css/responsive.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="{{ url('backend') }}/css/all.min.fontawesome.css">
 </head>
 <body>
 <!-- loader Start -->
@@ -95,6 +97,8 @@
 <script src="{{ url('backend') }}/js/chart-custom.js"></script>
 <!-- Custom JavaScript -->
 <script src="{{ url('backend') }}/js/custom.js"></script>
+<!-- Font Awesome JavaScript -->
+<script src="{{ url('backend') }}/js/all.min.js"></script>
 </body>
 
 
