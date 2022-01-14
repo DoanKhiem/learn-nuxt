@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/dashboard', function (){
     return view('backend.dashboard');
 });
+Route::get('/book', function (){
+    return view('backend.book.index');
+});
+
+Route::get('/book/create', function (){
+    return view('backend.book.create');
+});

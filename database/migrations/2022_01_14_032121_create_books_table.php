@@ -18,6 +18,7 @@ class CreateBooksTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('book_code')->unique();
+            $table->text('image')->nullable();
             $table->foreignId('shelf_id');
             $table->foreign('shelf_id')->references('id')->on('shelfs');
             $table->foreignId('category_id');

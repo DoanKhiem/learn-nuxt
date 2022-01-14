@@ -34,7 +34,14 @@
     <!-- TOP Nav Bar -->
     @include('backend.layouts.top-navbar')
     <!-- TOP Nav Bar END -->
-    @yield('content')
+    <!-- Page Content  -->
+    <div id="content-page" class="content-page">
+        <div class="container-fluid">
+            <div class="row">
+                @yield('content')
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Wrapper END -->
 <!-- Footer -->
