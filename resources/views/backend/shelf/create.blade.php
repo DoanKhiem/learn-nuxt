@@ -6,13 +6,12 @@
     <div class="iq-card">
         <div class="iq-card-header d-flex justify-content-between">
             <div class="iq-header-title">
-                <h4 class="card-title">Thêm Sách</h4>
+                <h4 class="card-title">Thêm Kệ Sách</h4>
             </div>
         </div>
         <div class="iq-card-body">
 {{--            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate, ex ac venenatis mollis, diam nibh finibus leo</p>--}}
-            <form class="needs-validation" action="{{route('book.store')}}" method="POST" enctype="multipart/form-data" novalidate>
-                @csrf
+            <form class="needs-validation" novalidate>
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
                         <label for="validationCustom01">Tên sách</label>
@@ -38,9 +37,9 @@
                         <label for="validationCustom05">Thể loại</label>
                         <select name="category_id" class="form-control" id="validationCustom05"  required>
                             <option selected disabled value="">Lựa chọn thể loại</option>
-                            @foreach($category as $value)
-                                <option value="{{$value->id}}">{{$value->name}}</option>
-                            @endforeach
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
                         </select>
                         <div class="valid-feedback">
                             Tốt!
@@ -53,9 +52,9 @@
                         <label for="validationCustom06">Kệ sách</label>
                         <select name="shelf_id" class="form-control" id="validationCustom06"  required>
                             <option selected disabled value="">Lựa chọn kệ sách</option>
-                            @foreach($shelf as $value)
-                                <option value="{{$value->id}}">{{$value->name}}</option>
-                            @endforeach
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
                         </select>
                         <div class="valid-feedback">
                             Tốt!
@@ -101,7 +100,7 @@
                 </div>
                 <div class="form-group">
                     <label>Upload Your Photo:</label>
-                    <input type="file" class="form-control" name="file" accept="image/*" style="line-height: 27px">
+                    <input type="file" class="form-control" name="pic" accept="image/*" style="line-height: 27px">
                 </div>
 {{--                <div class="form-group">--}}
 {{--                    <div class="form-check">--}}

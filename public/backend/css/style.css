@@ -1168,7 +1168,7 @@ Privacy Policy Page
 /*---------------------------------------------------------------------
 User List Page
 -----------------------------------------------------------------------*/
-.list-user-action a { font-size: 16px; height: 25px; width: 25px; text-align: center; line-height: 25px; margin: 0 3px; display: inline-block; border-radius: 5px; }
+.list-user-action a { font-size: 25px; height: 25px; width: 25px; text-align: center; line-height: 25px; margin: 0 3px; display: inline-block; border-radius: 5px; }
 #user-list-table.table td { vertical-align: middle; }
 .user-list-files a { padding: 10px 15px; margin: 0 0 0 10px; border-radius: 5px; line-height: normal; }
 .table-responsive #exampleInputSearch { width: auto; }

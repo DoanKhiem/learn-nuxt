@@ -6,7 +6,7 @@
         <div class="iq-card">
             <div class="iq-card-header d-flex justify-content-between">
                 <div class="iq-header-title">
-                    <h4 class="card-title">Sửa Thông Tin Sách</h4>
+                    <h4 class="card-title">Sửa Thông Tin Kệ Sách</h4>
                 </div>
             </div>
             <div class="iq-card-body">
@@ -14,7 +14,7 @@
                 <form class="needs-validation" novalidate>
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
-                            <label for="validationCustom01">Tên sách</label>
+                            <label for="validationCustom01">Tên kệ sách</label>
                             <input name="name" type="text" class="form-control" id="validationCustom01"  required>
                             <div class="valid-feedback">
                                 Tốt!

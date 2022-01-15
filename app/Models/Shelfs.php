@@ -13,4 +13,11 @@ class Shelfs extends Model
         'name',
         'note'
     ];
+
+    public function scopeSearch($query){
+        if ($key = request()->key){
+            $query = $query->where('name','like','%'.$key.'%');
+        }
+        return $query;
+    }
 }
