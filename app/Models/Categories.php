@@ -13,4 +13,7 @@ class Categories extends Model
         'name',
         'note'
     ];
+    public function numberOfBooks(){
+return $this->hasMany(Books::class, 'category_id', 'id');
+    }
 }

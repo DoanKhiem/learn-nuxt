@@ -1,6 +1,12 @@
 @extends('backend.master')
 @section('title', 'Danh sách thể loại')
 @section('content')
+    @if(Session::has('errors'))
+        <div class="mb-2 mr-2 badge badge-danger">{{Session::get('errors')}}</div>
+    @endif
+    @if(Session::has('success'))
+        <div class="mb-2 mr-2 badge badge-success">{{Session::get('success')}}</div>
+    @endif
     <div class="col-sm-12">
         <div class="iq-card">
             <div class="iq-card-header d-flex justify-content-between">
@@ -22,25 +28,37 @@
                         <tr>
                             <th scope="col">Stt</th>
                             <th scope="col">Tên thể loại</th>
+                            <th scope="col">Số lượng sách</th>
                             <th scope="col">Ghi chú</th>
                             <th scope="col">Chức năng</th>
                         </tr>
                         </thead>
                         <tbody>
                         @forelse($data as $item)
-                        <tr>
-                            <th scope="row">{{$loop->iteration}}</th>
-                            <td>{{$item->name}}</td>
-                            <td>{{$item->note}}</td>
-                            <td>
-                                <div class="flex align-items-center list-user-action">
-                                    <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a>
-                                    <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                </div>
-                            </td>
-                        </tr>
+                            <tr>
+                                <th scope="row">{{$loop->iteration}}</th>
+                                <td>{{$item->name}}</td>
+                                <td>{{$item->numberOfBooks->count()}}</td>
+                                <td>{{$item->note}}</td>
+                                <td>
+                                    <div class="flex align-items-center list-user-action">
+                                        <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title=""
+                                           data-original-title="Edit" href="{{ route('category.edit', $item->id) }}">
+                                            <i class="ri-pencil-line"></i>
+                                        </a>
+                                        <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title=""
+                                           data-original-title="Delete"
+                                           href="{{ route('category.delete', $item->id) }}"
+                                           onclick="return confirm('Bạn có chắc muốn xóa {{$item->name}} không?')">
+                                            <i class="ri-delete-bin-line"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
                         @empty
-                            <tr><th colspan="4" style="text-align: center">Không có thể loại nào</th></tr>
+                            <tr>
+                                <th colspan="4" style="text-align: center">Không có thể loại nào</th>
+                            </tr>
                         @endforelse
                         </tbody>
                     </table>
