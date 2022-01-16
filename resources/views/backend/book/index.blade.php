@@ -15,8 +15,8 @@
                 </div>
                 <div class="iq-search-bar">
                     <form action="#" class="searchbox">
-                        <input type="text" class="text search-input" placeholder="Search Here...">
-                        <a class="search-link" href="#"><i class="ri-search-line"></i></a>
+                        <input name="key" type="text" class="text search-input" placeholder="Search Here...">
+                        <button type="submit" class="search-link" style="background: none; border: none;"><i class="ri-search-line"></i></button>
                     </form>
                 </div>
             </div>
@@ -76,6 +76,9 @@
                         @endforelse
                         </tbody>
                     </table>
+                    <div class="">
+                        {{$data->appends(request()->all())->links()}}
+                    </div>
                 </div>
             </div>
         </div>

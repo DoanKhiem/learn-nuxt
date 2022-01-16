@@ -21,6 +21,12 @@ class Books extends Model
         'image',
         'note'
     ];
+    public function scopeSearch($query){
+        if ($key = request()->key){
+            $query = $query->where('name','like','%'.$key.'%');
+        }
+        return $query;
+    }
 
     public function bookToCategory()
     {
