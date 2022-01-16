@@ -21,7 +21,9 @@ Route::get('/dashboard', function (){
 Route::get('/book', [BookController::class, 'index'])->name('book.index');
 Route::get('/book/create', [BookController::class, 'create'])->name('book.create');
 Route::post('/book/store', [BookController::class, 'store'])->name('book.store');
-Route::get('/book/edit', [BookController::class, 'edit'])->name('book.edit');
+Route::get('/book/edit/{id}', [BookController::class, 'edit'])->name('book.edit');
+Route::post('/book/update/{id}', [BookController::class, 'update'])->name('book.update');
+Route::get('/book/delete/{id}', [BookController::class, 'delete'])->name('book.delete');
 
 Route::get('/shelf', [ShelfController::class, 'index'])->name('shelf.index');
 Route::get('/shelf/create', [ShelfController::class, 'create'])->name('shelf.create');

@@ -41,16 +41,39 @@ class BookController extends Controller
 
     public function edit($id)
     {
-
+        if ($book = Books::find($id)) {
+            $category = Categories::all();
+            $shelf = Shelfs::all();
+            return view('backend.book.edit', compact('book', 'category', 'shelf'));
+        } else {
+            return view('book.index')->with('error', 'Không tìm thấy sách này');
+        }
     }
 
     public function update(Request $request, $id)
     {
-
+        $book = Books::find($id);
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $file_name = $file->getClientOriginalName();
+            $file->move(public_path('uploads/books'), $file_name);
+            $request->merge(['image' => $file_name]);
+        }
+        if ($book->update($request->all())) {
+            return redirect()->route('book.index')->with('success', "Sửa sách $request->name thành công");
+        } else {
+            return 'lỗi';
+        }
     }
 
     public function delete($id)
     {
+        if ($book = Books::find($id)) {
+            $book->delete();
+            return redirect()->route('book.index')->with('success', "Xóa sách $book->name thành công");
+        } else {
+            return view('book.index')->with('error', 'Không tìm thấy sách này');
+        }
 
     }
 }

@@ -39,30 +39,40 @@
                         </thead>
                         <tbody>
                         @forelse($data as $item)
-                        <tr>
-                            <th scope="row">{{$loop->iteration}}</th>
-                            <td>{{$item->book_code}}</td>
-                            <td>{{$item->name}}</td>
-                            <td>{{$item->bookToCategory->name}}</td>
-                            <td>{{$item->author}}</td>
-                            <td>{{$item->bookToShelf->name}}</td>
-                            <td>{{$item->original_number}}/{{$item->current_quantity}}</td>
-                            <td>
-                                @if($item->image)
-                                <img style="width: 110px;" src="{{ url('uploads') }}/books/{{ $item->image }}" class="img-fluid" alt="Responsive image">
-                                @else
-                                Chưa có ảnh
-                                @endif
-                            </td>
-                            <td>
-                                <div class="flex align-items-center list-user-action">
-                                    <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#"><i class="ri-pencil-line"></i></a>
-                                    <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#"><i class="ri-delete-bin-line"></i></a>
-                                </div>
-                            </td>
-                        </tr>
+                            <tr>
+                                <th scope="row">{{$loop->iteration}}</th>
+                                <td>{{$item->book_code}}</td>
+                                <td>{{$item->name}}</td>
+                                <td>{{$item->bookToCategory->name}}</td>
+                                <td>{{$item->author}}</td>
+                                <td>{{$item->bookToShelf->name}}</td>
+                                <td>{{$item->original_number}}/{{$item->current_quantity}}</td>
+                                <td>
+                                    @if($item->image)
+                                        <img style="width: 110px;" src="{{ url('uploads') }}/books/{{ $item->image }}"
+                                             class="img-fluid" alt="Responsive image">
+                                    @else
+                                        Chưa có ảnh
+                                    @endif
+                                </td>
+                                <td>
+                                    <div class="flex align-items-center list-user-action">
+                                        <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title=""
+                                           data-original-title="Edit" href="{{ route('book.edit', $item->id) }}">
+                                            <i class="ri-pencil-line"></i>
+                                        </a>
+                                        <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title=""
+                                           data-original-title="Delete" href="{{ route('book.delete', $item->id) }}"
+                                           onclick="return confirm('Bạn có chắc muốn xóa {{$item->name}} không?')">
+                                            <i class="ri-delete-bin-line"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
                         @empty
-                            <tr><th colspan="4" style="text-align: center">Không có sách nào</th></tr>
+                            <tr>
+                                <th colspan="4" style="text-align: center">Không có sách nào</th>
+                            </tr>
                         @endforelse
                         </tbody>
                     </table>

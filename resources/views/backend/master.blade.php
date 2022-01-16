@@ -106,6 +106,8 @@
 <script src="{{ url('backend') }}/js/custom.js"></script>
 <!-- Font Awesome JavaScript -->
 <script src="{{ url('backend') }}/js/all.min.js"></script>
+
+@yield('js')
 </body>
 
 
