@@ -8,24 +8,58 @@ use Illuminate\Http\Request;
 
 class ShelfController extends Controller
 {
-    public function index(){
-        $data = Shelfs::orderBy('created_at', 'DESC')->paginate(2);
+    public function index()
+    {
+        $data = Shelfs::orderBy('name', 'ASC')->search()->paginate(40);
 //        dd($data);
         return view('backend.shelf.index', compact('data'));
     }
-    public function create(){
+
+    public function create()
+    {
+        return view('backend.shelf.create');
+    }
+
+    public function store(Request $request)
+    {
+//        dd($request->all());
+        if ($shelf = Shelfs::create($request->all())) {
+            return redirect()->route('shelf.index')->with('success', "Thêm mới kệ $request->name thành công");
+        }
+    }
+
+    public function edit($id)
+    {
+        if ($shelf = Shelfs::find($id)) {
+            return view('backend.shelf.edit', compact('shelf'));
+        }
 
     }
-    public function store(Request $request){
 
+    public function update(Request $request, $id)
+    {
+//        dd($request->all());
+        if ($shelf = Shelfs::find($id)) {
+            if ($shelf->update($request->all())) {
+                return redirect()->route('shelf.index')->with('success', "Sửa kệ sách $request->name thành công");
+            } else {
+                return 'lỗi';
+            }
+        } else {
+            return 'lỗi';
+        }
     }
-    public function edit($id){
 
-    }
-    public function update(Request $request, $id){
-
-    }
-    public function delete($id){
-
+    public function delete($id)
+    {
+        if ($shelf = Shelfs::find($id)) {
+            if ($shelf->delete()) {
+                return redirect()->route('shelf.index')->with('success', "Xóa kệ sách $shelf->name thành công");
+            } else {
+                'lỗi';
+            }
+        } else {
+            return view('shelf.index')->with('error', 'Không tìm thấy thể loại này');
+        }
     }
 }

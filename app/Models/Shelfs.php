@@ -13,6 +13,10 @@ class Shelfs extends Model
         'name',
         'note'
     ];
+    public function numberOfShelfs()
+    {
+        return $this->hasMany(Books::class, 'shelf_id', 'id');
+    }
 
     public function scopeSearch($query){
         if ($key = request()->key){

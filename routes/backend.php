@@ -18,6 +18,7 @@ use App\Http\Controllers\backend\BookController;
 Route::get('/dashboard', function (){
     return view('backend.dashboard');
 });
+
 Route::get('/book', [BookController::class, 'index'])->name('book.index');
 Route::get('/book/create', [BookController::class, 'create'])->name('book.create');
 Route::post('/book/store', [BookController::class, 'store'])->name('book.store');
@@ -28,7 +29,9 @@ Route::get('/book/delete/{id}', [BookController::class, 'delete'])->name('book.d
 Route::get('/shelf', [ShelfController::class, 'index'])->name('shelf.index');
 Route::get('/shelf/create', [ShelfController::class, 'create'])->name('shelf.create');
 Route::post('/shelf/store', [ShelfController::class, 'store'])->name('shelf.store');
-Route::get('/shelf/edit', [ShelfController::class, 'edit'])->name('shelf.edit');
+Route::get('/shelf/edit/{id}', [ShelfController::class, 'edit'])->name('shelf.edit');
+Route::post('/shelf/update/{id}', [ShelfController::class, 'update'])->name('shelf.update');
+Route::get('/shelf/delete/{id}', [ShelfController::class, 'delete'])->name('shelf.delete');
 
 Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
 Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');

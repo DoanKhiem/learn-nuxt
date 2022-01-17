@@ -1,12 +1,12 @@
 @extends('backend.master')
-@section('title', 'Thêm thể loại')
+@section('title', 'Thêm thể loại sách')
 @section('content')
 
 <div class="col-lg-12">
     <div class="iq-card">
         <div class="iq-card-header d-flex justify-content-between">
             <div class="iq-header-title">
-                <h4 class="card-title">Thêm Sách</h4>
+                <h4 class="card-title">Thêm Thể Loại Sách</h4>
             </div>
         </div>
         <div class="iq-card-body">
