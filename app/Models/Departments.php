@@ -13,4 +13,16 @@ class Departments extends Model
         'name',
         'note'
     ];
+
+    public function scopeSearch($query){
+        if ($key = request()->key){
+            $query = $query->where('name','like','%'.$key.'%');
+        }
+        return $query;
+    }
+    public function numberOfMembers()
+    {
+        return $this->hasMany(Members::class, 'department_id', 'id');
+    }
+
 }

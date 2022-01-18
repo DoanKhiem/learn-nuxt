@@ -25,6 +25,8 @@ class CreateMembersTable extends Migration
             $table->text('facebook')->nullable();
             $table->foreignId('department_id');
             $table->foreign('department_id')->references('id')->on('departments');
+            $table->foreignId('member_role_id');
+            $table->foreign('member_role_id')->references('id')->on('member_roles');
             $table->timestamps();
         });
     }

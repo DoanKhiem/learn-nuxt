@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\ShelfController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\BookController;
+use App\Http\Controllers\backend\DepartmentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,4 +40,11 @@ Route::post('/category/store', [CategoryController::class, 'store'])->name('cate
 Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
 Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('category.update');
 Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
+
+Route::get('/department', [DepartmentController::class, 'index'])->name('department.index');
+Route::get('/department/create', [DepartmentController::class, 'create'])->name('department.create');
+Route::post('/department/store', [DepartmentController::class, 'store'])->name('department.store');
+Route::get('/department/edit/{id}', [DepartmentController::class, 'edit'])->name('department.edit');
+Route::post('/department/update/{id}', [DepartmentController::class, 'update'])->name('department.update');
+Route::get('/department/delete/{id}', [DepartmentController::class, 'delete'])->name('department.delete');
 
