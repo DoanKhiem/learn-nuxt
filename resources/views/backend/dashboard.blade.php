@@ -1,7 +1,12 @@
 @extends('backend.master')
 @section('title', 'Dashboard')
 @section('content')
-
+    @if(Session::has('error'))
+        <div class="mb-2 mr-2 badge badge-danger">{{Session::get('error')}}</div>
+    @endif
+    @if(Session::has('success'))
+        <div class="mb-2 mr-2 badge badge-success">{{Session::get('success')}}</div>
+    @endif
     <div class="col-md-6 col-lg-3">
         <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
             <div class="iq-card-body">
