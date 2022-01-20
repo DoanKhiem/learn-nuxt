@@ -5,6 +5,7 @@ use App\Http\Controllers\backend\ShelfController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\BookController;
 use App\Http\Controllers\backend\DepartmentController;
+use App\Http\Controllers\backend\MemberController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,4 +48,11 @@ Route::post('/department/store', [DepartmentController::class, 'store'])->name('
 Route::get('/department/edit/{id}', [DepartmentController::class, 'edit'])->name('department.edit');
 Route::post('/department/update/{id}', [DepartmentController::class, 'update'])->name('department.update');
 Route::get('/department/delete/{id}', [DepartmentController::class, 'delete'])->name('department.delete');
+
+Route::get('/member', [MemberController::class, 'index'])->name('member.index');
+Route::get('/member/create', [MemberController::class, 'create'])->name('member.create');
+Route::post('/member/store', [MemberController::class, 'store'])->name('member.store');
+Route::get('/member/edit/{id}', [MemberController::class, 'edit'])->name('member.edit');
+Route::post('/member/update/{id}', [MemberController::class, 'update'])->name('member.update');
+Route::get('/member/delete/{id}', [MemberController::class, 'delete'])->name('member.delete');
 

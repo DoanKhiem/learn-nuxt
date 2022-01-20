@@ -10,7 +10,7 @@ class ShelfController extends Controller
 {
     public function index()
     {
-        $data = Shelfs::orderBy('name', 'ASC')->search()->paginate(40);
+        $data = Shelfs::orderBy('name', 'ASC')->get();
 //        dd($data);
         return view('backend.shelf.index', compact('data'));
     }

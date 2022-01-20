@@ -15,9 +15,18 @@ class Members extends Model
         'phone',
         'avatar',
         'sex',
+        'department_id',
+        'member_role_id',
         'birthday',
         'status',
         'note',
         'facebook',
     ];
+
+    public function memberToDepartment(){
+        return $this->hasOne(Departments::class, 'id', 'department_id');
+    }
+    public function memberToMemberRole(){
+        return $this->hasOne(Member_role::class, 'id', 'member_role_id');
+    }
 }

@@ -275,13 +275,12 @@ a:hover { text-decoration: none; }
 .iq-sidebar-menu .iq-menu li a { font-size: 16px; white-space: nowrap; display: block; color: var(--iq-body-text); position: relative; padding: 15px 20px; line-height: 18px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; overflow: hidden; border-radius: 0px; text-transform: capitalize; }
 .iq-sidebar-menu .iq-menu li li a { font-size: 16px; }
 .iq-sidebar-menu .iq-menu li a i { font-size: 20px; margin-right: 10px; vertical-align: middle; width: 20px; display: inline-block; float: left; }
-.iq-sidebar-menu .iq-menu li a svg { font-size: 20px; margin-right: 10px; vertical-align: middle; width: 20px; display: inline-block; float: left; }
 .iq-sidebar-menu .iq-menu li a span { white-space: nowrap; padding: 0; display: inline-block; float: left; -webkit-transition: all 0.3s ease-out 0s; -moz-transition: all 0.3s ease-out 0s; -ms-transition: all 0.3s ease-out 0s; -o-transition: all 0.3s ease-out 0s; transition: all 0.3s ease-out 0s; transition: none; }
 .iq-sidebar-menu .iq-menu li a .iq-arrow-right { margin-right: 0px; margin-left: auto; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; }
 .iq-sidebar-menu .iq-menu li a .badge { position: absolute; right: 15px; -webkit-transition: all 0.9s ease-out 0s; -moz-transition: all 0.9s ease-out 0s; -ms-transition: all 0.9s ease-out 0s; -o-transition: all 0.9s ease-out 0s; transition: all 0.9s ease-out 0s; }
 .iq-sidebar-menu .iq-menu li a:hover { color: var(--iq-primary); }
 .iq-sidebar-menu .iq-menu > li.active>a { color: var(--iq-primary); text-decoration: none; background: var(--iq-light-primary) }
-.iq-search-bar .searchbox .search-link { position: absolute; right: 15px; top: 5px; font-size: 16px; color: var(--iq-body-text); }
+.iq-search-bar .searchbox .search-link { position: absolute; left: 15px; top: 5px; font-size: 16px; color: var(--iq-body-text); }
 .iq-sidebar-menu .iq-menu li a[aria-expanded="true"] { color: var(--iq-primary); text-decoration: none; border-radius: 0; transition: none; }
 .iq-sidebar-menu .iq-menu li.active a[aria-expanded="true"] { background: var(--iq-light-primary) }
 .iq-sidebar-menu .iq-menu li a[aria-expanded="true"] .iq-arrow-right { transform: rotate(90deg); transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; }
@@ -306,7 +305,7 @@ body.sidebar-main .iq-sidebar .iq-menu li a[aria-expanded="false"].collapsed { b
 .iq-sidebar-menu .iq-menu .iq-submenu .iq-submenu-data { box-shadow: none; }
 .iq-sidebar-menu .iq-menu li.active ul.iq-submenu-data li.active>a { background: var(--iq-light-primary); color: var(--iq-primary); border-radius: 0; }
 .iq-sidebar-menu .iq-menu li ul.iq-submenu-data li { margin: 0; }
-/*body.sidebar-main .iq-sidebar .iq-sidebar-menu .iq-menu li ul.iq-submenu-data li > a, body.sidebar-main .iq-sidebar:hover .iq-sidebar-menu .iq-menu li ul.iq-submenu-data li > a { padding-left: 20px; }*/
+/*body.sidebar-main .iq-sidebar .iq-sidebar-menu .iq-menu li ul.iq-submenu-data li > a, body.sidebar-main .iq-sidebar:hover .iq-sidebar-menu .iq-menu li ul.iq-submenu-data li > a { padding-left: 20px; }*/  
 
 /*---------------------------------- */
 #sidebar-bottom { margin-bottom: 40px; }
@@ -374,7 +373,7 @@ div#lottie-beil svg path, div#lottie-mail svg path, div#lottie-fullscreen svg pa
 .navbar-list li > .dropdown { line-height: 73px; cursor: pointer; }
 .iq-search-bar { padding: 0 15px; }
 .iq-search-bar .searchbox { width: 480px; position: relative; }
-.iq-search-bar .search-input { width: 100%; height: 40px; padding: 5px 40px 5px 15px; font-size: 13px; border-radius: 5px; border: none; box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1); }
+.iq-search-bar .search-input { width: 100%; height: 40px; padding: 5px 15px 5px 40px; font-size: 13px; border-radius: 5px; border: none; box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1); }
 .iq-navbar-logo { padding: 20px; width: auto; position: relative; background: var(--iq-white); -webkit-transition: all 0.3s ease-out 0s; -moz-transition: all 0.3s ease-out 0s; -ms-transition: all 0.3s ease-out 0s; -o-transition: all 0.3s ease-out 0s; transition: all 0.3s ease-out 0s; background: transparent; }
 .iq-navbar-logo a { display: flex; align-items: flex-start; }
 .iq-navbar-logo a span { margin-left: 10px; font-size: 19px; line-height: 42px; font-weight: 600; color: var(--iq-body-text); text-transform: uppercase; flex: 1; -webkit-transition: all 0.3s ease-out 0s; -moz-transition: all 0.3s ease-out 0s; -ms-transition: all 0.3s ease-out 0s; -o-transition: all 0.3s ease-out 0s; transition: all 0.3s ease-out 0s; }
@@ -1126,7 +1125,7 @@ form.comment-text input { padding-right: 130px; }
 .twit-date a { color: var(--iq-body-text); }
 
 /*---------------------------------------------------------------------
-Profile Edit
+Profile Edit 
 -----------------------------------------------------------------------*/
 .profile-pic { max-width: 100%; display: block; border-radius: 50%; -webkit-border-radius: 50%; }
 .profile-img-edit { position: relative; display: inline-block; height: 150px; width: 150px; }
@@ -1168,7 +1167,7 @@ Privacy Policy Page
 /*---------------------------------------------------------------------
 User List Page
 -----------------------------------------------------------------------*/
-.list-user-action a { font-size: 25px; height: 25px; width: 25px; text-align: center; line-height: 25px; margin: 0 3px; display: inline-block; border-radius: 5px; }
+.list-user-action a { font-size: 16px; height: 25px; width: 25px; text-align: center; line-height: 25px; margin: 0 3px; display: inline-block; border-radius: 5px; }
 #user-list-table.table td { vertical-align: middle; }
 .user-list-files a { padding: 10px 15px; margin: 0 0 0 10px; border-radius: 5px; line-height: normal; }
 .table-responsive #exampleInputSearch { width: auto; }

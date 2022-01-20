@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="{{ url('backend') }}/images/favicon.ico" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ url('backend') }}/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url('backend') }}/css/dataTables.bootstrap4.min.css">
     <!-- Typography CSS -->
     <link rel="stylesheet" href="{{ url('backend') }}/css/typography.css">
     <!-- Style CSS -->
@@ -18,7 +19,7 @@
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{ url('backend') }}/css/responsive.css">
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="{{ url('backend') }}/css/all.min.fontawesome.css">
+    <link rel="stylesheet" href="{{ url('backend') }}/css/fontawesome.css">
 </head>
 <body>
 <!-- loader Start -->
@@ -55,6 +56,8 @@
 <script src="{{ url('backend') }}/js/jquery.min.js"></script>
 <script src="{{ url('backend') }}/js/popper.min.js"></script>
 <script src="{{ url('backend') }}/js/bootstrap.min.js"></script>
+<script src="{{ url('backend') }}/js/jquery.dataTables.min.js"></script>
+<script src="{{ url('backend') }}/js/dataTables.bootstrap4.min.js"></script>
 <!-- Appear JavaScript -->
 <script src="{{ url('backend') }}/js/jquery.appear.js"></script>
 <!-- Countdown JavaScript -->

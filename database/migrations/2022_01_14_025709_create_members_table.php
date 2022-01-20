@@ -19,7 +19,7 @@ class CreateMembersTable extends Migration
             $table->string('phone');
             $table->text('avatar')->nullable();
             $table->tinyInteger('sex')->nullable();
-            $table->dateTime('birthday')->nullable();
+            $table->date('birthday')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->text('note')->nullable();
             $table->text('facebook')->nullable();

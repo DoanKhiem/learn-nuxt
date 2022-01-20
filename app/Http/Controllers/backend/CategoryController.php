@@ -10,7 +10,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $data = Categories::orderBy('created_at', 'DESC')->search()->paginate(30);
+        $data = Categories::orderBy('created_at', 'DESC')->get();
 //        dd($data);
         return view('backend.category.index', compact('data'));
     }

@@ -10,7 +10,7 @@ class DepartmentController extends Controller
 {
     public function index()
     {
-        $data = Departments::orderBy('created_at', 'DESC')->search()->paginate(30);
+        $data = Departments::orderBy('created_at', 'DESC')->get();
 //        dd($data);
         return view('backend.department.index', compact('data'));
     }
