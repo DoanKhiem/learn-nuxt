@@ -24,12 +24,12 @@
     <div id="loading-center">
     </div>
 </div>
-@if(Session::has('errors'))
-    <div class="mb-2 mr-2 badge badge-danger">{{Session::get('errors')}}</div>
-@endif
-@if(Session::has('success'))
-    <div class="mb-2 mr-2 badge badge-success">{{Session::get('success')}}</div>
-@endif
+{{--@if(Session::has('errors'))--}}
+{{--    <div class="mb-2 mr-2 badge badge-danger">{{Session::get('errors')}}</div>--}}
+{{--@endif--}}
+{{--@if(Session::has('success'))--}}
+{{--    <div class="mb-2 mr-2 badge badge-success">{{Session::get('success')}}</div>--}}
+{{--@endif--}}
 <!-- loader END -->
 <!-- Sign in Start -->
 <section class="sign-in-page">
@@ -46,21 +46,28 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Email</label>
                                     <input type="email" name="email" class="form-control mb-0" id="exampleInputEmail1" placeholder="Nhập email">
+
                                 </div>
+                                @if ($errors->has('email'))
+                                    <label class="iq-bg-danger pl-2 pr-2 rounded d-inline-block">{{ $errors->first('email') }}</label>
+                                @endif
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Mật khẩu</label>
                                     <a href="#" class="float-right text-dark">Quên mật khẩu?</a>
                                     <input type="password" name="password" class="form-control mb-0" id="exampleInputPassword1" placeholder="Nhập mật khẩu">
                                 </div>
+                                @if ($errors->has('password'))
+                                    <label class="iq-bg-danger pl-2 pr-2 rounded d-inline-block">{{ $errors->first('password') }}</label>
+                                @endif
                                 <div class="d-inline-block w-100">
                                     <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1">
                                         <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                        <label class="custom-control-label" for="customCheck1">Remember Me</label>
+                                        <label class="custom-control-label" for="customCheck1">Thích thì bấm không thích thì bấm</label>
                                     </div>
                                 </div>
                                 <div class="sign-info text-center">
-                                    <button type="submit" class="btn btn-white d-block w-100 mb-2">Đăng nhập</button>
-                                    <span class="text-dark dark-color d-inline-block line-height-2">Bạn không có tài khoản? <a href="sign-up.html" class="text-white">Đăng ký</a></span>
+                                    <button type="submit" class="btn btn-white d-block w-100 mb-2">Đăng Nhập</button>
+                                    <span class="text-dark dark-color d-inline-block line-height-2">Chưa Có Tài Khoản? <a href="{{ route('register') }}" class="text-white">Đăng Ký</a></span>
                                 </div>
                             </form>
                         </div>

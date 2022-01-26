@@ -15,11 +15,27 @@
                 </div>
             </div>
             <div class="navbar-breadcrumb">
-                <h5 class="mb-0">Shop</h5>
+                <h5 class="mb-0">D free book</h5>
                 <nav aria-label="breadcrumb">
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Home Page</li>
+                        @php
+                            $menu_admin = config('menu-admin');
+                            $breadcrumb1 = "Trang chủ";
+                            foreach($menu_admin as $menu ){
+                                if (isset($menu['items'])){
+                                    foreach( $menu['items'] as $item ){
+                                        if($item['route'] == Route::current()->getName()){
+                                            $breadcrumb1 = $menu['label'];
+                                            $breadcrumb2 = $item['label'];
+                                        }
+                                    }
+                                }
+                            }
+                        @endphp
+                        <li class="breadcrumb-item"><a href="#">{{ $breadcrumb1 }}</a></li>
+                        @if(isset($breadcrumb2))
+                            <li class="breadcrumb-item active" aria-current="page">{{ $breadcrumb2 }}</li>
+                        @endif
                     </ul>
                 </nav>
             </div>
@@ -29,7 +45,8 @@
                     <a class="search-link" href="#"><i class="ri-search-line"></i></a>
                 </form>
             </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"  aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
                 <i class="ri-menu-3-line"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -52,12 +69,14 @@
                             <div class="iq-card shadow-none m-0">
                                 <div class="iq-card-body p-0">
                                     <div class="bg-primary p-3">
-                                        <h5 class="mb-0 text-white">All Notifications<small class="badge  badge-light float-right pt-1">4</small></h5>
+                                        <h5 class="mb-0 text-white">All Notifications<small
+                                                class="badge  badge-light float-right pt-1">4</small></h5>
                                     </div>
-                                    <a href="#" class="iq-sub-card" >
+                                    <a href="#" class="iq-sub-card">
                                         <div class="media align-items-center">
                                             <div class="">
-                                                <img class="avatar-40 rounded" src="{{ url('backend' )}}/images/user/01.jpg" alt="">
+                                                <img class="avatar-40 rounded"
+                                                     src="{{ url('backend' )}}/images/user/01.jpg" alt="">
                                             </div>
                                             <div class="media-body ml-3">
                                                 <h6 class="mb-0 ">Emma Watson Barry</h6>
@@ -66,10 +85,11 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="#" class="iq-sub-card" >
+                                    <a href="#" class="iq-sub-card">
                                         <div class="media align-items-center">
                                             <div class="">
-                                                <img class="avatar-40 rounded" src="{{ url('backend' )}}/images/user/02.jpg" alt="">
+                                                <img class="avatar-40 rounded"
+                                                     src="{{ url('backend' )}}/images/user/02.jpg" alt="">
                                             </div>
                                             <div class="media-body ml-3">
                                                 <h6 class="mb-0 ">New customer is join</h6>
@@ -78,10 +98,11 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="#" class="iq-sub-card" >
+                                    <a href="#" class="iq-sub-card">
                                         <div class="media align-items-center">
                                             <div class="">
-                                                <img class="avatar-40 rounded" src="{{ url('backend' )}}/images/user/03.jpg" alt="">
+                                                <img class="avatar-40 rounded"
+                                                     src="{{ url('backend' )}}/images/user/03.jpg" alt="">
                                             </div>
                                             <div class="media-body ml-3">
                                                 <h6 class="mb-0 ">Two customer is left</h6>
@@ -90,10 +111,11 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="#" class="iq-sub-card" >
+                                    <a href="#" class="iq-sub-card">
                                         <div class="media align-items-center">
                                             <div class="">
-                                                <img class="avatar-40 rounded" src="{{ url('backend' )}}/images/user/04.jpg" alt="">
+                                                <img class="avatar-40 rounded"
+                                                     src="{{ url('backend' )}}/images/user/04.jpg" alt="">
                                             </div>
                                             <div class="media-body ml-3">
                                                 <h6 class="mb-0 ">New Mail from Fenny</h6>
@@ -115,12 +137,14 @@
                             <div class="iq-card shadow-none m-0">
                                 <div class="iq-card-body p-0 ">
                                     <div class="bg-primary p-3">
-                                        <h5 class="mb-0 text-white">All Messages<small class="badge  badge-light float-right pt-1">5</small></h5>
+                                        <h5 class="mb-0 text-white">All Messages<small
+                                                class="badge  badge-light float-right pt-1">5</small></h5>
                                     </div>
                                     <a href="#" class="iq-sub-card">
                                         <div class="media align-items-center">
                                             <div class="">
-                                                <img class="avatar-40 rounded" src="{{ url('backend' )}}/images/user/01.jpg" alt="">
+                                                <img class="avatar-40 rounded"
+                                                     src="{{ url('backend' )}}/images/user/01.jpg" alt="">
                                             </div>
                                             <div class="media-body ml-3">
                                                 <h6 class="mb-0 ">Barry Emma Watson</h6>
@@ -131,7 +155,8 @@
                                     <a href="#" class="iq-sub-card">
                                         <div class="media align-items-center">
                                             <div class="">
-                                                <img class="avatar-40 rounded" src="{{ url('backend' )}}/images/user/02.jpg" alt="">
+                                                <img class="avatar-40 rounded"
+                                                     src="{{ url('backend' )}}/images/user/02.jpg" alt="">
                                             </div>
                                             <div class="media-body ml-3">
                                                 <h6 class="mb-0 ">Lorem Ipsum Watson</h6>
@@ -142,7 +167,8 @@
                                     <a href="#" class="iq-sub-card">
                                         <div class="media align-items-center">
                                             <div class="">
-                                                <img class="avatar-40 rounded" src="{{ url('backend' )}}/images/user/03.jpg" alt="">
+                                                <img class="avatar-40 rounded"
+                                                     src="{{ url('backend' )}}/images/user/03.jpg" alt="">
                                             </div>
                                             <div class="media-body ml-3">
                                                 <h6 class="mb-0 ">Why do we use it?</h6>
@@ -153,7 +179,8 @@
                                     <a href="#" class="iq-sub-card">
                                         <div class="media align-items-center">
                                             <div class="">
-                                                <img class="avatar-40 rounded" src="{{ url('backend' )}}/images/user/04.jpg" alt="">
+                                                <img class="avatar-40 rounded"
+                                                     src="{{ url('backend' )}}/images/user/04.jpg" alt="">
                                             </div>
                                             <div class="media-body ml-3">
                                                 <h6 class="mb-0 ">Variations Passages</h6>
@@ -164,7 +191,8 @@
                                     <a href="#" class="iq-sub-card">
                                         <div class="media align-items-center">
                                             <div class="">
-                                                <img class="avatar-40 rounded" src="{{ url('backend' )}}/images/user/05.jpg" alt="">
+                                                <img class="avatar-40 rounded"
+                                                     src="{{ url('backend' )}}/images/user/05.jpg" alt="">
                                             </div>
                                             <div class="media-body ml-3">
                                                 <h6 class="mb-0 ">Lorem Ipsum generators</h6>
@@ -185,54 +213,63 @@
                             <div class="iq-card shadow-none m-0">
                                 <div class="iq-card-body p-0 toggle-cart-info">
                                     <div class="bg-primary p-3">
-                                        <h5 class="mb-0 text-white">All Carts<small class="badge  badge-light float-right pt-1">4</small></h5>
+                                        <h5 class="mb-0 text-white">All Carts<small
+                                                class="badge  badge-light float-right pt-1">4</small></h5>
                                     </div>
                                     <a href="#" class="iq-sub-card">
                                         <div class="media align-items-center">
                                             <div class="">
-                                                <img class="rounded" src="{{ url('backend' )}}/images/cart/01.jpg" alt="">
+                                                <img class="rounded" src="{{ url('backend' )}}/images/cart/01.jpg"
+                                                     alt="">
                                             </div>
                                             <div class="media-body ml-3">
                                                 <h6 class="mb-0 ">Night People book</h6>
                                                 <p class="mb-0">$32</p>
                                             </div>
-                                            <div class="float-right font-size-24 text-danger"><i class="ri-close-fill"></i></div>
+                                            <div class="float-right font-size-24 text-danger"><i
+                                                    class="ri-close-fill"></i></div>
                                         </div>
                                     </a>
                                     <a href="#" class="iq-sub-card">
                                         <div class="media align-items-center">
                                             <div class="">
-                                                <img class="rounded" src="{{ url('backend' )}}/images/cart/02.jpg" alt="">
+                                                <img class="rounded" src="{{ url('backend' )}}/images/cart/02.jpg"
+                                                     alt="">
                                             </div>
                                             <div class="media-body ml-3">
                                                 <h6 class="mb-0 ">The Sin Eater Book</h6>
                                                 <p class="mb-0">$40</p>
                                             </div>
-                                            <div class="float-right font-size-24 text-danger"><i class="ri-close-fill"></i></div>
+                                            <div class="float-right font-size-24 text-danger"><i
+                                                    class="ri-close-fill"></i></div>
                                         </div>
                                     </a>
                                     <a href="#" class="iq-sub-card">
                                         <div class="media align-items-center">
                                             <div class="">
-                                                <img class="rounded" src="{{ url('backend' )}}/images/cart/03.jpg" alt="">
+                                                <img class="rounded" src="{{ url('backend' )}}/images/cart/03.jpg"
+                                                     alt="">
                                             </div>
                                             <div class="media-body ml-3">
                                                 <h6 class="mb-0 ">the Orange Tree</h6>
                                                 <p class="mb-0">$30</p>
                                             </div>
-                                            <div class="float-right font-size-24 text-danger"><i class="ri-close-fill"></i></div>
+                                            <div class="float-right font-size-24 text-danger"><i
+                                                    class="ri-close-fill"></i></div>
                                         </div>
                                     </a>
                                     <a href="#" class="iq-sub-card">
                                         <div class="media align-items-center">
                                             <div class="">
-                                                <img class="rounded" src="{{ url('backend' )}}/images/cart/04.jpg" alt="">
+                                                <img class="rounded" src="{{ url('backend' )}}/images/cart/04.jpg"
+                                                     alt="">
                                             </div>
                                             <div class="media-body ml-3">
                                                 <h6 class="mb-0 ">Harsh Reality book</h6>
                                                 <p class="mb-0">$25</p>
                                             </div>
-                                            <div class="float-right font-size-24 text-danger"><i class="ri-close-fill"></i></div>
+                                            <div class="float-right font-size-24 text-danger"><i
+                                                    class="ri-close-fill"></i></div>
                                         </div>
                                     </a>
                                     <div class="d-flex align-items-center text-center p-3">
@@ -245,7 +282,8 @@
                     </li>
                     <li class="line-height pt-3">
                         <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
-                            <img src="{{ url('backend' )}}/images/user/1.jpg" class="img-fluid rounded-circle mr-3" alt="user">
+                            <img src="{{ url('backend' )}}/images/user/1.jpg" class="img-fluid rounded-circle mr-3"
+                                 alt="user">
                             <div class="caption">
                                 <h6 class="mb-1 line-height">Barry Tech</h6>
                                 <p class="mb-0 text-primary">$20.32</p>
@@ -303,7 +341,8 @@
                                         </div>
                                     </a>
                                     <div class="d-inline-block w-100 text-center p-3">
-                                        <a class="bg-primary iq-sign-btn" href="{{ route('logout') }}" role="button">Sign out<i class="ri-login-box-line ml-2"></i></a>
+                                        <a class="bg-primary iq-sign-btn" href="{{ route('logout') }}" role="button">Sign
+                                            out<i class="ri-login-box-line ml-2"></i></a>
                                     </div>
                                 </div>
                             </div>

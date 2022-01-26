@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Login Admin</title>
+    <title>Đăng ký quản lý</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ url('backend') }}/images/favicon.ico" />
     <!-- Bootstrap CSS -->
@@ -33,22 +33,46 @@
                 <div class="row m-0">
                     <div class="col-sm-12 sign-in-page-data">
                         <div class="sign-in-from bg-primary rounded">
-                            <h3 class="mb-0 text-center text-white">Sign Up</h3>
-                            <p class="text-center text-white">Enter your email address and password to access admin panel.</p>
+                            <h3 class="mb-0 text-center text-white">Đăng Ký</h3>
+                            <p class="text-center text-white">Điền thông tin đăng ký của bạn tại đây để đăng ký</p>
                             <form class="mt-4 form-text" method="POST">
                                 @csrf
+                                <div class="form-group">
+                                    <label for="exampleInputName1">Tên đầy đủ của bạn</label>
+                                    <input type="text" name="name" class="form-control mb-0" id="exampleInputName1" placeholder="Nhập tên đầy đủ của bạn">
+
+                                </div>
+                                @if ($errors->has('name'))
+                                    <label class="iq-bg-danger pl-2 pr-2 rounded d-inline-block">{{ $errors->first('name') }}</label>
+                                @endif
 {{--                                <div class="form-group">--}}
-{{--                                    <label for="exampleInputEmail1">Your Full Name</label>--}}
-{{--                                    <input type="email" class="form-control mb-0" id="exampleInputEmail1" placeholder="Your Full Name">--}}
+{{--                                    <label for="exampleInputName2">Tên</label>--}}
+{{--                                    <input type="email" name="last_name" class="form-control mb-0" id="exampleInputName2" placeholder="Nhập tên">--}}
 {{--                                </div>--}}
                                 <div class="form-group">
-                                    <label for="exampleInputEmail2">Email address</label>
-                                    <input type="email" name="email" class="form-control mb-0" id="exampleInputEmail2" placeholder="Enter email">
+                                    <label for="exampleInputEmail2">Email</label>
+                                    <input type="email" name="email" class="form-control mb-0" id="exampleInputEmail2" placeholder="Nhập email">
+
                                 </div>
+                                @if ($errors->has('email'))
+                                    <label class="iq-bg-danger pl-2 pr-2 rounded d-inline-block">{{ $errors->first('email') }}</label>
+                                @endif
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" name="password" class="form-control mb-0" id="exampleInputPassword1" placeholder="Password">
+                                    <label for="exampleInputPassword1">Mật khẩu</label>
+                                    <input type="password" name="password" class="form-control mb-0" id="exampleInputPassword1" placeholder="Nhập mật khẩu">
+
                                 </div>
+                                @if ($errors->has('password'))
+                                    <label class="iq-bg-danger pl-2 pr-2 rounded d-inline-block">{{ $errors->first('password') }}</label>
+                                @endif
+                                <div class="form-group">
+                                    <label for="exampleInputPassword3">Xác nhận mật khẩu</label>
+                                    <input type="password" name="confirm_password" class="form-control mb-0" id="exampleInputPassword3" placeholder="Nhập xác nhận mật khẩu ">
+
+                                </div>
+                                @if ($errors->has('confirm_password'))
+                                    <label class="iq-bg-danger pl-2 pr-2 rounded d-inline-block">{{ $errors->first('confirm_password') }}</label>
+                                @endif
 {{--                                <div class="d-inline-block w-100">--}}
 {{--                                    <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1">--}}
 {{--                                        <input type="checkbox" class="custom-control-input" id="customCheck1">--}}
@@ -56,8 +80,8 @@
 {{--                                    </div>--}}
 {{--                                </div>--}}
                                 <div class="sign-info text-center">
-                                    <button type="submit" class="btn btn-white d-block w-100 mb-2">Sign Up</button>
-                                    <span class="text-dark d-inline-block line-height-2">Already Have Account ? <a href="sign-in.html" class="text-white">Log In</a></span>
+                                    <button type="submit" class="btn btn-white d-block w-100 mb-2">Đăng Ký</button>
+                                    <span class="text-dark d-inline-block line-height-2">Đã Có Tài Khoản ? <a href="{{ route('login') }}" class="text-white">Đăng Nhập</a></span>
                                 </div>
                             </form>
                         </div>

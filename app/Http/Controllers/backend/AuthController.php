@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\backend\LoginRequest;
+use App\Http\Requests\backend\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -15,12 +17,12 @@ class AuthController extends Controller
         return view('backend.auth.login');
     }
 
-    public function loginPost(Request $request){
+    public function loginPost(LoginRequest $request){
 //        dd($request->all());
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-        ]);
+//        $credentials = $request->validate([
+//            'email' => ['required', 'email'],
+//            'password' => ['required'],
+//        ]);
 //        dd(Auth);
 //        dd($credentials);
 
@@ -42,7 +44,7 @@ class AuthController extends Controller
         return view('backend.auth.register');
     }
 
-    public function registerPost(Request $request){
+    public function registerPost(RegisterRequest $request){
 //        dd($request->all());
         $request->merge(['password'=>Hash::make($request->password)]);
 //        dd($request->all());
