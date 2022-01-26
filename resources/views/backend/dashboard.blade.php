@@ -13,8 +13,8 @@
                 <div class="d-flex align-items-center">
                     <div class="rounded-circle iq-card-icon bg-primary"><i class="ri-user-line"></i></div>
                     <div class="text-left ml-3">
-                        <h2 class="mb-0"><span class="counter">5000</span></h2>
-                        <h5 class="">Users</h5>
+                        <h2 class="mb-0"><span class="counter">{{ $count_member }}</span></h2>
+                        <h5 class="">Thành viên</h5>
                     </div>
                 </div>
             </div>
@@ -26,8 +26,8 @@
                 <div class="d-flex align-items-center">
                     <div class="rounded-circle iq-card-icon bg-danger"><i class="ri-book-line"></i></div>
                     <div class="text-left ml-3">
-                        <h2 class="mb-0"><span class="counter">4.8</span>k</h2>
-                        <h5 class="">Books</h5>
+                        <h2 class="mb-0"><span class="counter">{{ $count_book }}</span></h2>
+                        <h5 class="">Sách</h5>
                     </div>
                 </div>
             </div>
@@ -39,8 +39,8 @@
                 <div class="d-flex align-items-center">
                     <div class="rounded-circle iq-card-icon bg-warning"><i class="ri-shopping-cart-2-line"></i></div>
                     <div class="text-left ml-3">
-                        <h2 class="mb-0"><span class="counter">1.2</span>k</h2>
-                        <h5 class="">Sale</h5>
+                        <h2 class="mb-0"><span class="counter">{{ $count_category }}</span></h2>
+                        <h5 class="">Thể loại</h5>
                     </div>
                 </div>
             </div>

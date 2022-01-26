@@ -2,10 +2,26 @@
 @section('title', 'Danh sách thành viên')
 @section('content')
     @if(Session::has('errors'))
-        <div class="mb-2 mr-2 badge badge-danger">{{Session::get('errors')}}</div>
+        <div class="ml-3 alert text-white bg-warning" role="alert" style="font-size: 15px; padding: 5px">
+            <div class="iq-alert-icon">
+                <i class="ri-alert-line"></i>
+            </div>
+            <div class="iq-alert-text">{{Session::get('errors')}}!</div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
     @endif
     @if(Session::has('success'))
-        <div class="mb-2 mr-2 badge badge-success">{{Session::get('success')}}</div>
+        <div class="ml-3 alert text-white bg-success" role="alert" style="font-size: 15px; padding: 5px">
+            <div class="iq-alert-icon">
+                <i class="ri-alert-line"></i>
+            </div>
+            <div class="iq-alert-text">{{Session::get('success')}}!</div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
     @endif
     <div class="col-sm-12">
         <div class="iq-card">
@@ -47,9 +63,9 @@
                                 <td><a href="{{ $item->facebook }}" target="_blank">fb</a></td>
                                 <td>
                                     @if($item->status == 1)
-                                    <span class="badge iq-bg-primary">Hoạt động</span>
+                                    <span class="badge badge-pill badge-success">Hoạt động</span>
                                     @else($item->status == 0)
-                                        <span class="badge iq-bg-danger">Nghỉ</span>
+                                        <span class="badge badge-pill badge-danger">Nghỉ</span>
                                     @endif
                                 </td>
                                 @if($item->birthday)

@@ -15,7 +15,7 @@ NOTE: This file contains the styling for responsive Template.
 :: General
 :: Input
 :: Loading
-:: Bootstrap override 
+:: Bootstrap override
 :: Background Color
 :: Background Color Opacity
 :: Background Border Color
@@ -86,7 +86,7 @@ h6 { font-size: 1.0em; line-height: 1.3em; }
 Input
 ------------------------------------------------*/
 label { color: var(--iq-dark); }
-.form-control.form-control-sm { height: 30px; line-height: 30px; }
+.form-control.form-control-sm { height: 26px; line-height: 16px; }
 .form-control.form-control-lg { height: 50px; line-height: 50px; }
 
 /* Definition Lists */
