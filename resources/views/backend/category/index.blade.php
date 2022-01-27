@@ -30,7 +30,7 @@
                     <h4 class="card-title">Danh Sách Thể Loại</h4>
                 </div>
                 <div class="iq-card-header-toolbar d-flex align-items-center">
-                    <a href="{{ route('category.create') }}" class="btn btn-primary">Thêm Mới Thể Loại</a>
+                    <a href="{{ route('admin.category.create') }}" class="btn btn-primary">Thêm Mới Thể Loại</a>
                 </div>
 {{--                <div class="iq-search-bar">--}}
 {{--                    <form action="#" class="searchbox">--}}
@@ -62,12 +62,12 @@
                                 <td>
                                     <div class="flex align-items-center list-user-action">
                                         <a class="bg-primary" data-toggle="tooltip" data-placement="top" title=""
-                                           data-original-title="Edit" href="{{ route('category.edit', $item->id) }}">
+                                           data-original-title="Edit" href="{{ route('admin.category.edit', $item->id) }}">
                                             <i class="ri-pencil-line"></i>
                                         </a>
                                         <a class="bg-primary" data-toggle="tooltip" data-placement="top" title=""
                                            data-original-title="Delete"
-                                           href="{{ route('category.delete', $item->id) }}"
+                                           href="{{ route('admin.category.delete', $item->id) }}"
                                            onclick="return confirm('Bạn có chắc muốn xóa {{$item->name}} không?')">
                                             <i class="ri-delete-bin-line"></i>
                                         </a>

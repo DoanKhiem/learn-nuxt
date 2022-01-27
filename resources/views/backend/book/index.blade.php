@@ -30,7 +30,7 @@
                     <h4 class="card-title">Danh Sách Sách</h4>
                 </div>
                 <div class="iq-card-header-toolbar d-flex align-items-center">
-                    <a href="{{ route('book.create') }}" class="btn btn-primary">Thêm Mới Sách</a>
+                    <a href="{{ route('admin.book.create') }}" class="btn btn-primary">Thêm Mới Sách</a>
                 </div>
             </div>
 
@@ -71,11 +71,11 @@
                                 <td>
                                     <div class="flex align-items-center list-user-action">
                                         <a class="bg-primary" data-toggle="tooltip" data-placement="top" title=""
-                                           data-original-title="Edit" href="{{ route('book.edit', $item->id) }}">
+                                           data-original-title="Edit" href="{{ route('admin.book.edit', $item->id) }}">
                                             <i class="ri-pencil-line"></i>
                                         </a>
                                         <a class="bg-primary" data-toggle="tooltip" data-placement="top" title=""
-                                           data-original-title="Delete" href="{{ route('book.delete', $item->id) }}"
+                                           data-original-title="Delete" href="{{ route('admin.book.delete', $item->id) }}"
                                            onclick="return confirm('Bạn có chắc muốn xóa {{$item->name}} không?')">
                                             <i class="ri-delete-bin-line"></i>
                                         </a>

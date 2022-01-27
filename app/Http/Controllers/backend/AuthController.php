@@ -28,7 +28,7 @@ class AuthController extends Controller
 
 //        dd(Auth::attempt($request->only('email','password')));
         if (Auth::attempt($request->only('email','password'))){
-            return redirect()->route('dashboard')->with('success','Đăng nhập thành công');
+            return redirect()->route('admin.dashboard')->with('success','Đăng nhập thành công');
         }
         else{
             return redirect()->back()->with('error','Đăng nhập không thành công');
@@ -38,7 +38,7 @@ class AuthController extends Controller
     public function logout(){
 //        dd('abc');
         Auth::logout();
-        return redirect()->route('login');
+        return redirect()->route('admin.login');
     }
     public function register(){
         return view('backend.auth.register');
@@ -49,7 +49,7 @@ class AuthController extends Controller
         $request->merge(['password'=>Hash::make($request->password)]);
 //        dd($request->all());
         User::create($request->all());
-        return redirect()->route('login')->with('success','Đăng ký thành công');
+        return redirect()->route('admin.login')->with('success','Đăng ký thành công');
 
     }
 }

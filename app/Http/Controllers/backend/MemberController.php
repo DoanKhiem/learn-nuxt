@@ -33,7 +33,7 @@ class MemberController extends Controller
             $request->merge(['avatar' => $file_name]);
         }
         if ($member = Members::create($request->all())) {
-            return redirect()->route('member.index')->with('success', "Thêm mới thành viên $request->name thành công");
+            return redirect()->route('admin.member.index')->with('success', "Thêm mới thành viên $request->name thành công");
         }
     }
 
@@ -58,7 +58,7 @@ class MemberController extends Controller
             $request->merge(['avatar' => $file_name]);
         }
         if ($member->update($request->all())) {
-            return redirect()->route('member.index')->with('success', "Sửa thông tin thành viên $request->name thành công");
+            return redirect()->route('admin.member.index')->with('success', "Sửa thông tin thành viên $request->name thành công");
         } else {
             return 'lỗi';
         }
@@ -68,7 +68,7 @@ class MemberController extends Controller
     {
         if ($member = Members::find($id)) {
             $member->delete();
-            return redirect()->route('member.index')->with('success', "Xóa thành viên $member->name thành công");
+            return redirect()->route('admin.member.index')->with('success', "Xóa thành viên $member->name thành công");
         } else {
             return view('member.index')->with('error', 'Không tìm thấy thành viên này');
         }

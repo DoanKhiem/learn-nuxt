@@ -23,7 +23,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         if ($category = Categories::create($request->all())) {
-            return redirect()->route('category.index')->with('success', "Thêm mới $request->name thành công");
+            return redirect()->route('admin.category.index')->with('success', "Thêm mới $request->name thành công");
         }
     }
 
@@ -40,7 +40,7 @@ class CategoryController extends Controller
 //        dd($request->all());
         if ($category = Categories::find($id)) {
             if ($category->update($request->all())) {
-                return redirect()->route('category.index')->with('success', "Sửa thể loại $request->name thành công");
+                return redirect()->route('admin.category.index')->with('success', "Sửa thể loại $request->name thành công");
             } else {
                 return 'lỗi';
             }
@@ -53,7 +53,7 @@ class CategoryController extends Controller
     {
         if ($category = Categories::find($id)) {
             if ($category->delete()){
-                return redirect()->route('category.index')->with('success', "Xóa thể loại $category->name thành công");
+                return redirect()->route('admin.category.index')->with('success', "Xóa thể loại $category->name thành công");
             }else{
                 return 'lỗi';
             }

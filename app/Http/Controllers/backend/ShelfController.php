@@ -24,7 +24,7 @@ class ShelfController extends Controller
     {
 //        dd($request->all());
         if ($shelf = Shelfs::create($request->all())) {
-            return redirect()->route('shelf.index')->with('success', "Thêm mới kệ $request->name thành công");
+            return redirect()->route('admin.shelf.index')->with('success', "Thêm mới kệ $request->name thành công");
         }
     }
 
@@ -41,7 +41,7 @@ class ShelfController extends Controller
 //        dd($request->all());
         if ($shelf = Shelfs::find($id)) {
             if ($shelf->update($request->all())) {
-                return redirect()->route('shelf.index')->with('success', "Sửa kệ sách $request->name thành công");
+                return redirect()->route('admin.shelf.index')->with('success', "Sửa kệ sách $request->name thành công");
             } else {
                 return 'lỗi';
             }
@@ -54,7 +54,7 @@ class ShelfController extends Controller
     {
         if ($shelf = Shelfs::find($id)) {
             if ($shelf->delete()) {
-                return redirect()->route('shelf.index')->with('success', "Xóa kệ sách $shelf->name thành công");
+                return redirect()->route('admin.shelf.index')->with('success', "Xóa kệ sách $shelf->name thành công");
             } else {
                 'lỗi';
             }

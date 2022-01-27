@@ -11,7 +11,7 @@
             </div>
             <div class="iq-card-body">
                 {{--            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate, ex ac venenatis mollis, diam nibh finibus leo</p>--}}
-                <form class="needs-validation" action="{{route('member.update', $member->id)}}" method="POST" enctype="multipart/form-data" novalidate>
+                <form class="needs-validation" action="{{route('admin.member.update', $member->id)}}" method="POST" enctype="multipart/form-data" novalidate>
                     @csrf
                     <div class="form-row">
                         <div class="col-md-6 mb-3">

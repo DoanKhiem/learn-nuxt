@@ -11,7 +11,7 @@
         </div>
         <div class="iq-card-body">
 {{--            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate, ex ac venenatis mollis, diam nibh finibus leo</p>--}}
-            <form class="needs-validation" action="{{ route('department.store') }}" method="POST" novalidate>
+            <form class="needs-validation" action="{{ route('admin.department.store') }}" method="POST" novalidate>
                 @csrf
                 <div class="form-row">
                     <div class="col-md-6 mb-3">

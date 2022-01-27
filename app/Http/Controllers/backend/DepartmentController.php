@@ -23,7 +23,7 @@ class DepartmentController extends Controller
     public function store(Request $request)
     {
         if ($department = Departments::create($request->all())) {
-            return redirect()->route('department.index')->with('success', "Thêm mới ban $request->name thành công");
+            return redirect()->route('admin.department.index')->with('success', "Thêm mới ban $request->name thành công");
         }
     }
 
@@ -40,7 +40,7 @@ class DepartmentController extends Controller
 //        dd($request->all());
         if ($department = Departments::find($id)) {
             if ($department->update($request->all())) {
-                return redirect()->route('department.index')->with('success', "Sửa ban $request->name thành công");
+                return redirect()->route('admin.department.index')->with('success', "Sửa ban $request->name thành công");
             } else {
                 return 'lỗi';
             }
@@ -53,7 +53,7 @@ class DepartmentController extends Controller
     {
         if ($category = Departments::find($id)) {
             if ($category->delete()){
-                return redirect()->route('category.index')->with('success', "Xóa ban $category->name thành công");
+                return redirect()->route('admin.category.index')->with('success', "Xóa ban $category->name thành công");
             }else{
                 return 'lỗi';
             }

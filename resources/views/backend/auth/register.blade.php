@@ -81,7 +81,7 @@
 {{--                                </div>--}}
                                 <div class="sign-info text-center">
                                     <button type="submit" class="btn btn-white d-block w-100 mb-2">Đăng Ký</button>
-                                    <span class="text-dark d-inline-block line-height-2">Đã Có Tài Khoản ? <a href="{{ route('login') }}" class="text-white">Đăng Nhập</a></span>
+                                    <span class="text-dark d-inline-block line-height-2">Đã Có Tài Khoản ? <a href="{{ route('admin.login') }}" class="text-white">Đăng Nhập</a></span>
                                 </div>
                             </form>
                         </div>

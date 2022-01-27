@@ -4,7 +4,7 @@ return [
     [
         'label' => 'Trang chủ',
         'icon' => 'las la-home iq-arrow-left',
-        'route' => 'dashboard'
+        'route' => 'admin.dashboard'
     ],
     [
         'label' => 'Sách',
@@ -13,12 +13,12 @@ return [
             [
                 'label' => 'Danh sách sách',
                 'icon' => 'fa fa-book',
-                'route' => 'book'
+                'route' => 'admin.book.index'
             ],
             [
                 'label' => 'Thêm sách',
                 'icon' => 'fas fa-book-medical',
-                'route' => 'book.create'
+                'route' => 'admin.book.create'
             ]
         ]
     ],
@@ -29,12 +29,12 @@ return [
             [
                 'label' => 'Danh sách loại sách',
                 'icon' => 'fa fa-book',
-                'route' => 'category.index'
+                'route' => 'admin.category.index'
             ],
             [
                 'label' => 'Thêm thể loại sách',
                 'icon' => 'fas fa-book-medical',
-                'route' => 'category.create'
+                'route' => 'admin.category.create'
             ]
         ]
     ],
@@ -45,12 +45,12 @@ return [
             [
                 'label' => 'Danh sách ban',
                 'icon' => 'ri-award-fill',
-                'route' => 'department.index'
+                'route' => 'admin.department.index'
             ],
             [
                 'label' => 'Thêm ban',
                 'icon' => 'ri-award-fill',
-                'route' => 'department.create'
+                'route' => 'admin.department.create'
             ]
         ]
     ],
@@ -61,12 +61,12 @@ return [
             [
                 'label' => 'Danh sách thành viên',
                 'icon' => 'fa fa-users',
-                'route' => 'member.index'
+                'route' => 'admin.member.index'
             ],
             [
                 'label' => 'Thêm thành viên',
                 'icon' => 'fas fa-user-plus',
-                'route' => 'member.create'
+                'route' => 'admin.member.create'
             ]
         ]
     ],
@@ -77,12 +77,12 @@ return [
             [
                 'label' => 'Danh sách kệ sách',
                 'icon' => 'fa fa-book',
-                'route' => 'shelf.index'
+                'route' => 'admin.shelf.index'
             ],
             [
                 'label' => 'Thêm kệ sách',
                 'icon' => 'fas fa-book-medical',
-                'route' => 'shelf.create'
+                'route' => 'admin.shelf.create'
             ]
         ]
     ],

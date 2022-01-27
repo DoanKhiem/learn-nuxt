@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="sign-info text-center">
                                     <button type="submit" class="btn btn-white d-block w-100 mb-2">Đăng Nhập</button>
-                                    <span class="text-dark dark-color d-inline-block line-height-2">Chưa Có Tài Khoản? <a href="{{ route('register') }}" class="text-white">Đăng Ký</a></span>
+                                    <span class="text-dark dark-color d-inline-block line-height-2">Chưa Có Tài Khoản? <a href="{{ route('admin.register') }}" class="text-white">Đăng Ký</a></span>
                                 </div>
                             </form>
                         </div>

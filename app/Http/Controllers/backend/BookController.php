@@ -35,7 +35,7 @@ class BookController extends Controller
 //        dd($request->all());
         $book = Books::create($request->all());
         if ($book) {
-            return redirect()->route('book.index')->with('success', 'Thêm mới thành công');
+            return redirect()->route('admin.book.index')->with('success', 'Thêm mới thành công');
         }
     }
 
@@ -60,7 +60,7 @@ class BookController extends Controller
             $request->merge(['image' => $file_name]);
         }
         if ($book->update($request->all())) {
-            return redirect()->route('book.index')->with('success', "Sửa sách $request->name thành công");
+            return redirect()->route('admin.book.index')->with('success', "Sửa sách $request->name thành công");
         } else {
             return 'lỗi';
         }
@@ -70,7 +70,7 @@ class BookController extends Controller
     {
         if ($book = Books::find($id)) {
             $book->delete();
-            return redirect()->route('book.index')->with('success', "Xóa sách $book->name thành công");
+            return redirect()->route('admin.book.index')->with('success', "Xóa sách $book->name thành công");
         } else {
             return view('book.index')->with('error', 'Không tìm thấy sách này');
         }
