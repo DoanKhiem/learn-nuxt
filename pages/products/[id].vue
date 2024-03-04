@@ -1,4 +1,4 @@
-<template >
+<template>
   <div>
     <p>Product details for {{ id }}</p>
     <p>
@@ -11,4 +11,7 @@
 
 <script setup>
 const { id } = useRoute().params;
+definePageMeta({
+  layout: 'products'
+})
 </script>

@@ -1,16 +1,5 @@
 <template>
     <div>
-        <header>
-            <nav>
-                <nuxt-link to="/">Nuxt Khiem</nuxt-link>
-                <ul>
-                    <li><nuxt-link to="/">Home</nuxt-link></li>
-                    <li><nuxt-link to="/about">About</nuxt-link></li>
-                    <li><nuxt-link to="/products">Product</nuxt-link></li>
-                </ul>
-                <a href="/about">normal link -- about page</a>
-            </nav>
-        </header>
         <h2>Home</h2>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At necessitatibus dolore a temporibus libero
             aliquid distinctio, sunt ad est, nesciunt laborum tempora ipsum repudiandae deserunt cumque maiores totam
