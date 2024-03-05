@@ -1,5 +1,9 @@
 <template>
   <div>
+    <Header>
+      <Title>Nuxt Khiem | {{ product.title }}</Title>
+      <Meta name="description" :content="product.description" />
+    </Header>
     <ProductDetails :product="product" />
   </div>
 </template>
@@ -9,9 +13,9 @@ const { id } = useRoute().params;
 const uri = `https://fakestoreapi.com/products/${id}`;
 
 // fetch the product details
-const { data: product } = await useFetch(uri, { key:  id });
+const { data: product } = await useFetch(uri, { key: id });
 
-if(!product.value) {
+if (!product.value) {
   throw createError({ statusCode: 404, message: 'Product not found', fatal: true })
 }
 definePageMeta({
