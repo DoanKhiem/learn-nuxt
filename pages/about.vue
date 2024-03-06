@@ -7,11 +7,15 @@
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae quod culpa, eaque harum exercitationem
             blanditiis dignissimos, dolor sapiente ex ut ducimus temporibus totam dolorem soluta fugiat. At natus
             laudantium, ducimus impedit iusto magni odit voluptas. Sed dolor quaerat vero earum!</p>
+        <p>{{ data }}</p>
     </div>
 </template>
 
 <script setup>
-
+const { data } = await useFetch('/api/ninja/?name=khiem', {
+    method: 'POST',
+    body: { age: 30 },
+});
 </script>
 
 <style scoped>
