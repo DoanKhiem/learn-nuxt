@@ -8,6 +8,7 @@
             blanditiis dignissimos, dolor sapiente ex ut ducimus temporibus totam dolorem soluta fugiat. At natus
             laudantium, ducimus impedit iusto magni odit voluptas. Sed dolor quaerat vero earum!</p>
         <p>{{ data }}</p>
+        <p>{{ dataCurrent }}</p>
     </div>
 </template>
 
@@ -16,6 +17,8 @@ const { data } = await useFetch('/api/ninja/?name=khiem', {
     method: 'POST',
     body: { age: 30 },
 });
+
+const dataCurrent  = await useFetch('/api/currency/users');
 </script>
 
 <style scoped>

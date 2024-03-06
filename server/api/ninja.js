@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
     const { age} = await readBody(event)
 
     //api call with private key
-    const { data } = await $fetch()
+    // const { data } = await $fetch()
 
     return {
         message: `Hello, ${name}! Your are ${age} years old.`
