@@ -1,6 +1,8 @@
 <template>
     <div>
-    <p>Some default layout content shared across all pages</p>
+    <header>Header section</header>
+    <div>Banner section</div>
+    <div>Who section</div>
     <slot />
   </div>
 </template>

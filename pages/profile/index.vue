@@ -1,8 +1,7 @@
 <template>
     <div>
-    <p>Some default layout content shared across all pages</p>
-    <slot />
-  </div>
+        <h1>Profile</h1>
+    </div>
 </template>
 
 <script setup lang="ts">

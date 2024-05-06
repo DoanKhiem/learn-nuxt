@@ -1,12 +1,13 @@
 <template>
     <div>
-    <p>Some default layout content shared across all pages</p>
-    <slot />
-  </div>
+        <h1>About</h1>
+    </div>
 </template>
 
 <script setup lang="ts">
-
+definePageMeta({
+  layout: 'public'
+})
 </script>
 
 <style scoped>
