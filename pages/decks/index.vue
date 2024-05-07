@@ -1,10 +1,10 @@
 <template>
-    <div>
-        <h1>Decks</h1>
-        <span>Please enter number of deck to show:</span>
-        <input type="text" v-model="deckID" placeholder="Please enter deck id">
-        <button @click="showDeck">Go to Deck</button>
+    <h1>Decks</h1>
+    <div class="mb-3 col-2">
+        <label for="exampleFormControlInput1" class="form-label">Please enter number of deck to show:</label>
+        <input class="form-control" id="exampleFormControlInput1" type="text" v-model="deckID" placeholder="Please enter deck id">
     </div>
+    <button type="button" class="btn btn-primary" @click="showDeck">Go to Deck</button>
 </template>
 
 <script setup lang="ts">
