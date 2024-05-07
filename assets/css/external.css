@@ -1,0 +1,13 @@
+body {
+    font-family: "Poetsen One", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
