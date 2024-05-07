@@ -5,28 +5,28 @@
             <li>
                 <div class="card deck-card">
                     <img src="https://mcdn.coolmate.me/image/March2023/meme-meo-2.jpg" alt="Thumbnail card">
-                    <div class="card-body">
+                    <nuxt-link to="/decks/1" class="card-body">
                         <h3>Title card</h3>
                         <p>Description card</p>
-                    </div>
+                    </nuxt-link>
                 </div>
             </li>
             <li>
                 <div class="card deck-card">
                     <img src="https://mcdn.coolmate.me/image/March2023/meme-meo-2.jpg" alt="Thumbnail card">
-                    <div class="card-body">
+                    <nuxt-link to="/decks/2" class="card-body">
                         <h3>Title card</h3>
                         <p>Description card</p>
-                    </div>
+                    </nuxt-link>
                 </div>
             </li>
             <li>
                 <div class="card deck-card">
                     <img src="https://mcdn.coolmate.me/image/March2023/meme-meo-2.jpg" alt="Thumbnail card">
-                    <div class="card-body">
+                    <nuxt-link to="/decks/3" class="card-body">
                         <h3>Title card</h3>
                         <p>Description card</p>
-                    </div>
+                    </nuxt-link>
                 </div>
             </li>
         </ul>
@@ -68,6 +68,9 @@ const showDeck = () => {
         img {
             width: 250px;
             height: auto;
+        }
+        .card-body {
+            color: black;
         }
     }
 }
