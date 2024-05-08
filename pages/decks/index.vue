@@ -1,6 +1,9 @@
 <template>
     <div class="container">
-        <h3>List of your decks:</h3>
+        <div class="d-flex justify-content-between my-3">
+            <h3>List of your decks:</h3>
+            <UButton class="btn btn-primary" label="Create a Deck" @click="isOpen = true" />
+        </div>
         <ul class="decks">
             <li>
                 <div class="card deck-card">
@@ -30,49 +33,56 @@
                 </div>
             </li>
         </ul>
-        <!-- <div class="mb-3 col-2">
-            <label for="exampleFormControlInput1" class="form-label">Please enter number of deck to show:</label>
-            <input class="form-control" id="exampleFormControlInput1" type="text" v-model="deckID"
-                placeholder="Please enter deck id">
-        </div>
-        <button type="button" class="btn btn-primary" @click="showDeck">Go to Deck</button> -->
+        <UModal v-model="isOpen" prevent-close>
+            <UCard :ui="{ ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }">
+                <template #header>
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">
+                            Modal
+                        </h3>
+                        <UButton color="gray" variant="ghost" icon="i-heroicons-x-mark-20-solid" class="-my-1"
+                            @click="isOpen = false" />
+                    </div>
+                </template>
+                <Placeholder class="h-32" />
+            </UCard>
+        </UModal>
     </div>
 </template>
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
 import { ref } from 'vue';
-
-const router = useRouter();
-const deckID = ref('');
-const showDeck = () => {
-    router.push(`/decks/${deckID.value}`);
-}
+const isOpen = ref(false)
 </script>
 
 <style scoped>
 .decks {
     margin: 0;
     padding: 0;
+
     li {
         list-style: none;
         margin-bottom: 1rem;
+
         &:last-child {
             margin-bottom: 0;
         }
     }
+
     .deck-card {
         display: flex;
         flex-direction: row;
         height: 250px;
+
         img {
             width: 250px;
             height: auto;
         }
+
         .card-body {
             color: black;
         }
     }
 }
-
 </style>
