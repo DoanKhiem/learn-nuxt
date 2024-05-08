@@ -43,6 +43,9 @@ header {
                 &:hover {
                     text-decoration: underline;
                 }
+                &.router-link-exact-active {
+                    color: red;
+                }
             }
         }
     }
