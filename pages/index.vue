@@ -33,7 +33,7 @@
 .banner {
     height: 500px;
     .thumbnail-banner {
-        background: url('https://cdn.pixabay.com/photo/2016/08/03/09/04/universe-1566161_640.jpg') center center;
+        background: url('/assets/images/banner.jpg') center center;
         background-size: cover;
         height: inherit;
     }
