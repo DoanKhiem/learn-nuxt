@@ -11,6 +11,9 @@
                 <li>
                     <nuxt-link to="/profile">Profile</nuxt-link>
                 </li>
+                <li>
+                    <nuxt-link to="/settings">Profile</nuxt-link>
+                </li>
             </ul>
         </nav>
     </header>
@@ -42,6 +45,9 @@ header {
                 text-decoration: none;
                 &:hover {
                     text-decoration: underline;
+                }
+                &.router-link-exact-active {
+                    color: red;
                 }
             }
         }
