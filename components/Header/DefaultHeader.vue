@@ -11,6 +11,9 @@
                 <li>
                     <nuxt-link to="/profile">Profile</nuxt-link>
                 </li>
+                <li>
+                    <nuxt-link to="/settings">Profile</nuxt-link>
+                </li>
             </ul>
         </nav>
     </header>
