@@ -8,47 +8,15 @@
       </div>
       <hr class="my-5">
       <div class="row cards">
-        <div class="col-3">
+        <div class="col-3" v-for="item in cards" :key="item.id">
           <div class="card">
             <div class="front-card">
-              <img src="https://genk.mediacdn.vn/zoom/700_438/2018/10/19/photo1539926992972-15399269929721994052665.jpg"
-                alt="Thumbnail card">
+              <img :src="item.thumbnail"
+                :alt="'Thumbnail card' + item.thumbnail">
             </div>
             <div class="back-card">
               <h6>Shop</h6>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card">
-            <div class="front-card">
-              <img src="https://genk.mediacdn.vn/zoom/700_438/2018/10/19/photo1539926992972-15399269929721994052665.jpg"
-                alt="Thumbnail card">
-            </div>
-            <div class="back-card">
-              <h6>Shop</h6>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card">
-            <div class="front-card">
-              <img src="https://genk.mediacdn.vn/zoom/700_438/2018/10/19/photo1539926992972-15399269929721994052665.jpg"
-                alt="Thumbnail card">
-            </div>
-            <div class="back-card">
-              <h6>Shop</h6>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card">
-            <div class="front-card">
-              <img src="https://genk.mediacdn.vn/zoom/700_438/2018/10/19/photo1539926992972-15399269929721994052665.jpg"
-                alt="Thumbnail card">
-            </div>
-            <div class="back-card">
-              <h6>Shop</h6>
+              <h6>{{ item.title }}</h6>
             </div>
           </div>
         </div>
@@ -97,7 +65,32 @@ import type { FormError, FormSubmitEvent } from '#ui/types'
 //     return typeof params.id === 'string' && /^\d+$/.test(params.id)
 //   }
 // })
-
+const cards = ref([
+  {
+    id: 1,
+    title: 'Title card 1',
+    description: 'Description card 1',
+    thumbnail: 'https://genk.mediacdn.vn/zoom/700_438/2018/10/19/photo1539926992972-15399269929721994052665.jpg',
+  },
+  {
+    id: 2,
+    title: 'Title card 2',
+    description: 'Description card 2',
+    thumbnail: 'https://genk.mediacdn.vn/zoom/700_438/2018/10/19/photo1539926992972-15399269929721994052665.jpg',
+  },
+  {
+    id: 3,
+    title: 'Title card 3',
+    description: 'Description card 3',
+    thumbnail: 'https://genk.mediacdn.vn/zoom/700_438/2018/10/19/photo1539926992972-15399269929721994052665.jpg',
+  },
+  {
+    id: 4,
+    title: 'Title card 4',
+    description: 'Description card 4',
+    thumbnail: 'https://genk.mediacdn.vn/zoom/700_438/2018/10/19/photo1539926992972-15399269929721994052665.jpg',
+  }
+])
 const isOpen = ref(false)
 
 const state = reactive({

@@ -5,30 +5,12 @@
             <UButton class="btn btn-primary" label="Create a Deck" @click="isOpen = true" />
         </div>
         <ul class="decks">
-            <li>
+            <li v-for="item in decks" :key="item.id">
                 <div class="card deck-card">
-                    <img src="https://mcdn.coolmate.me/image/March2023/meme-meo-2.jpg" alt="Thumbnail card">
-                    <nuxt-link to="/decks/1" class="card-body">
-                        <h3>Title card</h3>
-                        <p>Description card</p>
-                    </nuxt-link>
-                </div>
-            </li>
-            <li>
-                <div class="card deck-card">
-                    <img src="https://mcdn.coolmate.me/image/March2023/meme-meo-2.jpg" alt="Thumbnail card">
-                    <nuxt-link to="/decks/2" class="card-body">
-                        <h3>Title card</h3>
-                        <p>Description card</p>
-                    </nuxt-link>
-                </div>
-            </li>
-            <li>
-                <div class="card deck-card">
-                    <img src="https://mcdn.coolmate.me/image/March2023/meme-meo-2.jpg" alt="Thumbnail card">
-                    <nuxt-link to="/decks/3" class="card-body">
-                        <h3>Title card</h3>
-                        <p>Description card</p>
+                    <img :src="item.thumbnail" :alt="`Thumbnail card` + item.thumbnail">
+                    <nuxt-link :to="'/decks/' + item.id" class="card-body">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.description }}</p>
                     </nuxt-link>
                 </div>
             </li>
@@ -72,6 +54,32 @@ import { useRouter } from 'vue-router';
 import { ref } from 'vue';
 import type { FormError, FormSubmitEvent } from '#ui/types'
 
+const decks = ref([
+  {
+    id: 1,
+    title: 'Title card 1',
+    description: 'Description card 1',
+    thumbnail: 'https://mcdn.coolmate.me/image/March2023/meme-meo-2.jpg',
+  },
+  {
+    id: 2,
+    title: 'Title card 2',
+    description: 'Description card 2',
+    thumbnail: 'https://mcdn.coolmate.me/image/March2023/meme-meo-2.jpg',
+  },
+  {
+    id: 3,
+    title: 'Title card 3',
+    description: 'Description card 3',
+    thumbnail: 'https://mcdn.coolmate.me/image/March2023/meme-meo-2.jpg',
+  },
+  {
+    id: 4,
+    title: 'Title card 4',
+    description: 'Description card 4',
+    thumbnail: 'https://mcdn.coolmate.me/image/March2023/meme-meo-2.jpg',
+  }
+])
 const isOpen = ref(false)
 
 const state = reactive({
