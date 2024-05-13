@@ -33,7 +33,7 @@
                 </div>
             </li>
         </ul>
-        <UModal v-model="isOpen" prevent-close>
+        <UModal v-model="isOpen" prevent-close name="create-deck">
             <UCard :ui="{ ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }">
                 <template #header>
                     <div class="flex items-center justify-between">
@@ -44,7 +44,24 @@
                             @click="isOpen = false" />
                     </div>
                 </template>
-                <Placeholder class="h-32" />
+                <Placeholder class="h-32">
+                    <UForm :state="state" class="space-y-4" @submit="onSubmit">
+                        <UFormGroup label="Name" name="name">
+                            <UInput v-model="state.name" placeholder="Please enter name"/>
+                        </UFormGroup>
+                        <UFormGroup name="textarea" label="Textarea" >
+                            <UTextarea v-model="state.textarea" placeholder="Please enter textarea"/>
+                        </UFormGroup>
+                        <UFormGroup label="File" name="file">
+                            <UInput v-model="state.file" type="file" />
+                            <div class="preview"></div>
+                        </UFormGroup>
+                        <UButton type="submit">
+                            Submit
+                        </UButton>
+                    </UForm>
+                </Placeholder>
+
             </UCard>
         </UModal>
     </div>
@@ -53,7 +70,25 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
 import { ref } from 'vue';
+import type { FormError, FormSubmitEvent } from '#ui/types'
+
 const isOpen = ref(false)
+
+const state = reactive({
+    name: undefined,
+    textarea: undefined,
+    file: undefined,
+})
+const validate = (state: any): FormError[] => {
+    const errors = []
+    if (!state.email) errors.push({ path: 'email', message: 'Required' })
+    if (!state.password) errors.push({ path: 'password', message: 'Required' })
+    return errors
+}
+async function onSubmit(event: FormSubmitEvent<any>) {
+    // Do something with data
+    console.log(event.data)
+}
 </script>
 
 <style scoped>
